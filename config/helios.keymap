@@ -19,7 +19,7 @@
     &kp CAPSLOCK  &kp A     &kp S     &kp D     &kp F     &kp G                                                                      &kp H     &kp J     &kp K     &kp L     &kp SEMICOLON  &kp SINGLE_QUOTE
     &kp LEFT_SHIFT  &kp Z     &kp X     &kp C     &kp V     &kp B                                                                      &kp N     &kp M     &kp COMMA  &kp DOT   &kp SLASH  &kp RIGHT_SHIFT
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-                                          &kp LEFT_CONTROL  &kp LEFT_ALT                                               &kp RIGHT_GUI  &kp RIGHT_CONTROL
+                                          &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
                                                                 &kp HOME                                               &kp PAGE_UP
                                             &kp BACKSPACE  &kp DELETE   &kp END                                                &kp PAGE_DOWN  &kp ENTER &kp SPACE
             >;
