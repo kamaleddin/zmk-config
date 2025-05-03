@@ -9,49 +9,34 @@
 #define QUICK_TAP 175
 #define REQUIRE_PRIOR_IDLE 100
 
-// Home row mods macro
-#define HRM(NAME, HOLD, TAP, TRIGGER_POS) \
-    ZMK_BEHAVIOR(NAME, hold_tap, \
-        flavor = "balanced"; \
-        tapping-term-ms = <TAPPING_TERM>; \
-        quick-tap-ms = <QUICK_TAP>; \
-        require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>; \
-        bindings = <&kp>, <&kp>; \
-        hold-trigger-key-positions = <TRIGGER_POS>; \
-        hold-trigger-on-release; \
-        hold-trigger-key-dn-accel-limit = <95>; \
-        hold-trigger-key-up-accel-limit = <95>; \
-    )
+/ {
+    behaviors {
+        // Left-hand home row mods
+        hm_l_s: hm_left_ctrl_s {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
 
-// Left-hand home row mods
-ZMK_BEHAVIOR(hm_l_s, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <TAPPING_TERM>;
-    quick-tap-ms = <QUICK_TAP>;
-    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
-    hold-trigger-on-release;
-)
-
-// Right-hand home row mods
-ZMK_BEHAVIOR(hm_r_s, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <TAPPING_TERM>;
-    quick-tap-ms = <QUICK_TAP>;
-    require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-    hold-trigger-on-release;
-)
-
-// Specific home row mod behaviors
-&hm_l_s {
-    hold-trigger-key-positions = <KEYS_R THUMBS>;
-};
-
-&hm_r_s {
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
+        // Right-hand home row mods
+        hm_r_s: hm_right_ctrl_s {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+    };
 };
 
 // For increased responsiveness in certain key combinations

@@ -23,18 +23,6 @@
             hold-trigger-on-release;
         };
         
-        hm_l_s: hm_left_ctrl_s {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <TAPPING_TERM>;
-            quick-tap-ms = <QUICK_TAP>;
-            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
-            hold-trigger-on-release;
-        };
-        
         hm_l_d: hm_left_gui_d {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
