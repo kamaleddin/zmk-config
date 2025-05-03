@@ -7,7 +7,7 @@
 // Configuration for home row mods
 #define TAPPING_TERM 200
 #define QUICK_TAP 175
-#define REQUIRE_PRIOR_IDLE 100
+#define REQUIRE_PRIOR_IDLE 150
 
 / {
     behaviors {
