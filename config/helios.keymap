@@ -5,8 +5,109 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include "include/keypos_helios.h"
+#include "include/behaviors_homerow.dtsi"
 
 / {
+    behaviors {
+        // Home row mod behaviors for each finger
+        hm_l_a: hm_left_shift_a {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+        
+        hm_l_s: hm_left_ctrl_s {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+        
+        hm_l_d: hm_left_gui_d {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+        
+        hm_l_f: hm_left_alt_f {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+        
+        hm_r_j: hm_right_alt_j {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+        
+        hm_r_k: hm_right_gui_k {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+        
+        hm_r_l: hm_right_ctrl_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+        
+        hm_r_semi: hm_right_shift_semi {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <TAPPING_TERM>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -16,7 +117,7 @@
     &kp ESC   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6    &kp F7    &kp F8         &kp F9    &kp F10   &kp F11   &kp F12   &kp PSCRN  &kp SLCK  &kp PAUSE_BREAK  &tog 1    &mo 2
     &kp EQUAL   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                                                                      &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp MINUS
     &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                                                                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BACKSLASH
-    &kp CAPSLOCK  &kp A     &kp S     &kp D     &kp F     &kp G                                                                      &kp H     &kp J     &kp K     &kp L     &kp SEMICOLON  &kp SINGLE_QUOTE
+    &kp ESCAPE  &hm_l_a LSHFT A  &hm_l_s LCTRL S  &hm_l_d LGUI D  &hm_l_f LALT F  &kp G                                                                      &kp H     &hm_r_j RALT J  &hm_r_k RGUI K  &hm_r_l RCTRL L  &hm_r_semi RSHFT SEMI  &kp SINGLE_QUOTE
     &kp LEFT_SHIFT  &kp Z     &kp X     &kp C     &kp V     &kp B                                                                      &kp N     &kp M     &kp COMMA  &kp DOT   &kp SLASH  &kp RIGHT_SHIFT
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                           &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
