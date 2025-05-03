@@ -73,9 +73,9 @@
             #binding-cells = <0>;
             label = "OS_COPY";
             bindings
-                = <&macro_press &mo 5>
+                = <&macro_press &mo 3>
                 , <&macro_tap &kp C>
-                , <&macro_release &mo 5>
+                , <&macro_release &mo 3>
                 ;
         };
 
@@ -84,9 +84,9 @@
             #binding-cells = <0>;
             label = "OS_PASTE";
             bindings
-                = <&macro_press &mo 5>
+                = <&macro_press &mo 3>
                 , <&macro_tap &kp V>
-                , <&macro_release &mo 5>
+                , <&macro_release &mo 3>
                 ;
         };
 
@@ -94,7 +94,7 @@
         os_toggle: os_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 5>;
+            bindings = <&tog 3>;
             label = "OS_TOGGLE";
         };
     };
@@ -103,8 +103,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         os_detection_layer {
-            if-layers = <5>;
-            then-layer = <6>;
+            if-layers = <3>;
+            then-layer = <4>;
         };
     };
 
