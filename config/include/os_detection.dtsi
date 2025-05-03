@@ -9,6 +9,16 @@
 
 // OS detection behavior
 / {
+    // Define a flag to track current OS
+    macros {
+        // Define a global variable to track OS state (0 = macOS, 1 = Windows)
+        ZMK_MACRO(toggle_os_state,
+            wait-ms = <0>;
+            tap-ms = <0>;
+            bindings = <&macro_tap &tog 4>;
+        )
+    };
+
     behaviors {
         // Conditional mod mappings
         win_gui: windows_gui_mod {
@@ -68,43 +78,37 @@
             label = "WINDOWS_CTRL_V";
         };
 
-        os_copy: os_copy {
-            compatible = "zmk,behavior-macro-versioned";
-            #binding-cells = <0>;
-            label = "OS_COPY";
-            bindings
-                = <&macro_press &mo 3>
-                , <&macro_tap &kp C>
-                , <&macro_release &mo 3>
-                ;
-        };
-
-        os_paste: os_paste {
-            compatible = "zmk,behavior-macro-versioned";
-            #binding-cells = <0>;
-            label = "OS_PASTE";
-            bindings
-                = <&macro_press &mo 3>
-                , <&macro_tap &kp V>
-                , <&macro_release &mo 3>
-                ;
-        };
-
-        // OS detection toggle macro
+        // OS detection toggle macro - Toggle between Windows and Mac layers
         os_toggle: os_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 3>;
+            bindings = <&toggle_os_state>;
             label = "OS_TOGGLE";
+        };
+        
+        // Fix copy/paste macros
+        os_copy: os_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LC(C)>, <&macro_tap &kp LG(C)>;
+            label = "OS_COPY";
+        };
+
+        os_paste: os_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_tap &kp LC(V)>, <&macro_tap &kp LG(V)>;
+            label = "OS_PASTE";
         };
     };
 
-    // OS detection conditional layer
+    // OS detection conditional layer setup
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        os_detection_layer {
-            if-layers = <3>;
-            then-layer = <4>;
+        // When layer 2 (system) is active, temporarily enable either macos or windows layer depending on state
+        macos_system_layer {
+            if-layers = <2 4>;
+            then-layer = <5>; // Windows layer
         };
     };
 
@@ -125,10 +129,6 @@
         };
     };
 };
-
-// Setup the OS toggle shortcut on a key
-// This creates a "peek" behavior that will check if we're on Windows or macOS
-// Note: quick-tap-ms is not supported for &kp behavior
 
 // Define these key combos based on ZMK's existing macros
 #define MAC_COPY &kp LG(C)
