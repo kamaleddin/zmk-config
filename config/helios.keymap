@@ -109,8 +109,8 @@
     &kp LEFT_SHIFT  &kp Z     &kp X     &kp C     &kp V     &kp B                                                                      &kp N     &kp M     &kp COMMA  &kp DOT   &kp SLASH  &kp RIGHT_SHIFT
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                           &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
-                                                                &kp HOME                                               &kp PAGE_UP
-                                            &kp BACKSPACE  &kp DELETE   &kp END                                                &kp PAGE_DOWN  &kp ENTER &kp SPACE
+                                                                &kp SPACE                                               &kp ESCAPE
+                                            &kp BACKSPACE  &kp SPACE   &kp DELETE                                                &kp ESCAPE  &kp ENTER &kp TAB
             >;
         };
 
@@ -124,23 +124,23 @@
     &none  &none  &none  &none  &none  &none                                                                   &none  &kp KP_N1    &kp KP_N2    &kp KP_N3    &kp KP_ENTER  &none
            &none  &kp INSERT  &none  &none                                                                                 &none  &none  &kp KP_DOT  &kp KP_ENTER
                                               &none  &none                                        &none  &none
-                                                     &none                                        &none
-                                       &none  &none  &none                                        &none  &none  &kp KP_N0
+                                                     &trans                                       &trans
+                                       &kp BACKSPACE  &kp SPACE  &kp DELETE                                        &kp ESCAPE  &kp ENTER  &kp TAB
             >;
         };
 
         system_layer {
             display-name = "System";
             bindings = <
-    &studio_unlock  &none  &none  &none  &none  &none  &none  &none  &none                 &none  &none  &none &none  &none  &none  &none  &trans  &trans
+    &none  &none  &none  &none  &none  &none  &none  &none  &none                 &none  &none  &none &none  &none  &none  &none  &trans  &trans
     &none  &none  &none  &none  &none  &none                                                                   &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none  &none                                                                   &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none  &none                                                                   &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none  &none                                                                   &none  &none  &none  &none  &none  &none
            &none  &none  &none  &none                                                                                 &none  &none  &none  &none
                                               &none  &none                                        &none  &none
-                                                     &none                                        &none
-                                  &none  &none  &none                                             &none  &none  &none
+                                                     &trans                                       &trans
+                                       &kp BACKSPACE  &kp SPACE  &kp DELETE                                      &kp ESCAPE  &kp ENTER  &kp TAB
             >;
         };
 
