@@ -109,8 +109,8 @@
     &kp LEFT_SHIFT  &kp Z     &kp X     &kp C     &kp V     &kp B                                                                      &kp N     &kp M     &kp COMMA  &kp DOT   &kp SLASH  &kp RIGHT_SHIFT
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                           &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
-                                                                &kp SPACE                                               &kp ESCAPE
-                                            &kp BACKSPACE  &kp SPACE   &kp DELETE                                                &kp ESCAPE  &kp ENTER &kp TAB
+                                                                &trans                                               &trans
+                                            &kp BACKSPACE  &kp SPACE   &kp DELETE                                                &kp ENTER  &kp ESCAPE &kp TAB
             >;
         };
 
@@ -125,7 +125,7 @@
            &none  &kp INSERT  &none  &none                                                                                 &none  &none  &kp KP_DOT  &kp KP_ENTER
                                               &none  &none                                        &none  &none
                                                      &trans                                       &trans
-                                       &kp BACKSPACE  &kp SPACE  &kp DELETE                                        &kp ESCAPE  &kp ENTER  &kp TAB
+                                       &kp BACKSPACE  &kp SPACE  &kp DELETE                                        &kp ENTER  &kp ESCAPE  &kp TAB
             >;
         };
 
@@ -140,7 +140,7 @@
            &none  &none  &none  &none                                                                                 &none  &none  &none  &none
                                               &none  &none                                        &none  &none
                                                      &trans                                       &trans
-                                       &kp BACKSPACE  &kp SPACE  &kp DELETE                                      &kp ESCAPE  &kp ENTER  &kp TAB
+                                       &kp BACKSPACE  &kp SPACE  &kp DELETE                                      &kp ENTER  &kp ESCAPE  &kp TAB
             >;
         };
 
