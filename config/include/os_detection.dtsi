@@ -128,9 +128,7 @@
 
 // Setup the OS toggle shortcut on a key
 // This creates a "peek" behavior that will check if we're on Windows or macOS
-&kp {
-    quick-tap-ms = <200>;
-};
+// Note: quick-tap-ms is not supported for &kp behavior
 
 // Define these key combos based on ZMK's existing macros
 #define MAC_COPY &kp LG(C)
