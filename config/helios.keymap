@@ -105,7 +105,7 @@
     &kp ESC   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6    &kp F7    &kp F8         &kp F9    &kp F10   &kp F11   &kp F12   &kp PSCRN  &kp SLCK  &kp PAUSE_BREAK  &tog 1    &mo 2
     &kp EQUAL   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                                                                      &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp MINUS
     &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                                                                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BACKSLASH
-    &kp ESCAPE  &hm_l_a LSHFT A  &hm_l_s LCTRL S  &hm_l_d LGUI D  &hm_l_f LALT F  &kp G                                                                      &kp H     &hm_r_j RALT J  &hm_r_k RGUI K  &hm_r_l RCTRL L  &hm_r_semi RSHFT SEMI  &kp SINGLE_QUOTE
+    &mo 3  &hm_l_a LSHFT A  &hm_l_s LCTRL S  &hm_l_d LGUI D  &hm_l_f LALT F  &kp G                                                                      &kp H     &hm_r_j RALT J  &hm_r_k RGUI K  &hm_r_l RCTRL L  &hm_r_semi RSHFT SEMI  &kp SINGLE_QUOTE
     &kp LEFT_SHIFT  &kp Z     &kp X     &kp C     &kp V     &kp B                                                                      &kp N     &kp M     &kp COMMA  &kp DOT   &kp SLASH  &kp RIGHT_SHIFT
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                           &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
@@ -141,6 +141,21 @@
                                               &none  &none                                        &none  &none
                                                      &none                                        &none
                                   &none  &none  &none                                             &none  &none  &none
+            >;
+        };
+
+        navigation_layer {
+            display-name = "Navigation";
+            bindings = <
+    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                                                                  &trans  &kp HOME  &kp PAGE_DOWN  &kp PAGE_UP  &kp END  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                                                                  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                                                                  &trans  &kp LC(LEFT)  &kp LC(DOWN)  &kp LC(UP)  &kp LC(RIGHT)  &trans
+           &trans  &trans  &trans  &trans                                                                                   &trans  &trans  &trans  &trans
+                                              &trans  &mo 3                                        &mo 3  &trans
+                                                     &trans                                        &trans
+                                  &trans  &trans  &trans                                           &trans  &trans  &trans
             >;
         };
 
