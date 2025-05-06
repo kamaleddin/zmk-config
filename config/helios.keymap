@@ -94,6 +94,17 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
+        
+        // Navigation layer / Escape key behavior
+        nav_esc: nav_layer_escape {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&mo>, <&kp>;
+        };
     };
 
     keymap {
@@ -105,7 +116,7 @@
     &kp ESC   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6    &kp F7    &kp F8         &kp F9    &kp F10   &kp F11   &kp F12   &kp PSCRN  &kp SLCK  &kp PAUSE_BREAK  &tog 1    &mo 2
     &kp EQUAL   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5                                                                      &kp N6     &kp N7     &kp N8     &kp N9     &kp N0     &kp MINUS
     &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                                                                      &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BACKSLASH
-    &mo 3  &hm_l_a LSHFT A  &hm_l_s LCTRL S  &hm_l_d LGUI D  &hm_l_f LALT F  &kp G                                                                      &kp H     &hm_r_j RALT J  &hm_r_k RGUI K  &hm_r_l RCTRL L  &hm_r_semi RSHFT SEMI  &kp SINGLE_QUOTE
+    &nav_esc 3 ESCAPE  &hm_l_a LSHFT A  &hm_l_s LCTRL S  &hm_l_d LGUI D  &hm_l_f LALT F  &kp G                                                                      &kp H     &hm_r_j RALT J  &hm_r_k RGUI K  &hm_r_l RCTRL L  &hm_r_semi RSHFT SEMI  &kp SINGLE_QUOTE
     &kp LEFT_SHIFT  &kp Z     &kp X     &kp C     &kp V     &kp B                                                                      &kp N     &kp M     &kp COMMA  &kp DOT   &kp SLASH  &kp RIGHT_SHIFT
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                           &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
