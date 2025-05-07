@@ -8,6 +8,9 @@
 #include "include/keypos_helios.h"
 #include "include/behaviors_homerow.dtsi"
 
+#define SYMBOL_LAYER 4
+#define NUMBER_LAYER 5
+
 / {
     behaviors {
         // Home row mod behaviors for each finger
@@ -134,7 +137,7 @@
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                           &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
                                                                 &kp HOME                                               &kp PAGE_UP
-                                            &kp BACKSPACE  &kp DELETE   &kp END                                                &kp TAB  &enter_f10 F10 ENTER &kp SPACE
+                                            &kp BACKSPACE  &mo NUMBER_LAYER   &kp END                                 &kp TAB  &enter_f10 F10 ENTER &mo SYMBOL_LAYER
             >;
         };
 
@@ -156,7 +159,7 @@
         system_layer {
             display-name = "System";
             bindings = <
-    &studio_unlock  &none  &none  &none  &none  &none  &none  &none  &none                 &none  &none  &none &none  &none  &none  &none  &trans  &trans
+    &none  &none  &none  &none  &none  &none  &none  &none  &none                 &none  &none  &none &none  &none  &none  &none  &trans  &trans
     &none  &none  &none  &none  &none  &none                                                                   &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none  &none                                                                   &none  &none  &none  &none  &none  &none
     &none  &none  &none  &none  &none  &none                                                                   &none  &none  &none  &none  &none  &none
@@ -183,5 +186,34 @@
             >;
         };
 
+        symbol_layer {
+            display-name = "Symbol";
+            bindings = <
+    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &kp LBKT  &kp LPAR  &kp LBRC  &kp LT  &kp GRAVE                                                        &kp GRAVE  &kp GT  &kp RBRC  &kp RPAR  &kp RBKT  &trans
+    &trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PIPE                                                         &kp PIPE  &kp AMPS  &kp STAR  &kp QMARK  &kp BSLH  &trans
+           &trans  &trans  &trans  &trans                                                                                   &trans  &trans  &trans  &trans
+                                              &trans  &trans                                        &trans  &trans
+                                                     &trans                                        &trans
+                                  &trans  &trans  &trans                                           &trans  &kp SPACE  &trans
+            >;
+        };
+
+        number_layer {
+            display-name = "Number";
+            bindings = <
+    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &trans  &trans  &trans  &trans  &trans                                                                  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                                                 &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
+    &trans  &kp MINUS &kp SLASH &kp STAR &kp PLUS &kp EQUAL                                                        &kp DOT  &kp COMMA &kp UNDER &kp PRCNT &kp CARET &trans
+           &trans  &trans  &trans  &trans                                                                                   &trans  &trans  &trans  &trans
+                                              &trans  &trans                                        &trans  &trans
+                                                     &trans                                        &trans
+                                  &trans  &kp DELETE  &trans                                       &trans  &trans  &trans
+            >;
+        };
     };
 };
