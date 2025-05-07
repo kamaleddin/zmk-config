@@ -114,7 +114,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <QUICK_TAP>;
             require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
-            bindings = <&kp F10>, <&kp ENTER>;
+            bindings = <&kp F10 &kp ENTER>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
