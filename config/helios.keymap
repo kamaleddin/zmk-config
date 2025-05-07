@@ -121,6 +121,30 @@
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
+        
+        // Space/Symbol layer behavior
+        lt_space: layer_tap_space {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&mo>, <&kp>;
+            retro-tap;
+        };
+        
+        // Delete/Number layer behavior
+        lt_del: layer_tap_delete {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&mo>, <&kp>;
+            retro-tap;
+        };
     };
 
     keymap {
@@ -137,7 +161,7 @@
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                           &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
                                                                 &kp HOME                                               &kp PAGE_UP
-                                            &kp BACKSPACE  &mo NUMBER_LAYER   &kp END                                 &kp TAB  &enter_f10 F10 ENTER &mo SYMBOL_LAYER
+                                            &kp BACKSPACE  &lt_del NUMBER_LAYER DELETE   &kp END                       &kp TAB  &enter_f10 F10 ENTER &lt_space SYMBOL_LAYER SPACE
             >;
         };
 
