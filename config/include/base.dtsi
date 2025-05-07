@@ -81,8 +81,9 @@
 
 //      layer       aliases
 #define NAV_ESC     &escape_morph
-#define NUM_SPC     &space_morph
-#define SYM_ENT     &lt SYM ENTER
+#define NUM_SPC     &lt NUM SPACE     // Activate number layer by holding space
+#define SYM_DEL     &lt SYM DEL       // Activate symbol layer by holding delete
+#define SYM_ENT     &lt SYM ENTER     // Original definition kept for compatibility
 
 //      some        functions
 #define LH(key)     LS(LC(LA(LG(key))))
@@ -131,7 +132,7 @@
         //├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤
             X_LB     &kp Z      &kp X      &kp C      &kp D      &kp V        X_MB     &kp K      &kp H      &comma_morph  &dot_morph &kp FSLH  X_RB
         //├──────┤ ╰──────────┴──────────┴──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┴──────────┴──────────╯ ├──────┤
-            X_LH                                      NAV_ESC    NUM_SPC      X_MH     SYM_ENT    &key_repeat                                   X_RH
+            X_LH                                      NAV_ESC    NUM_SPC      X_MH     &kp ENTER  SYM_DEL                                       X_RH
         //╰──────╯                                  ╰──────────┴──────────╯ ╰──────╯ ╰──────────┴──────────╯                                  ╰──────╯
             >;
         };
@@ -144,9 +145,9 @@
         //├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤
             X_LM     HRML(A,        S,         D,         F,        G)        X_MM     HRMR(H,         J,        K,         L,       SEMI)      X_RM
         //├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤
-            X_LB     &kp Z      &kp X      &kp C      &kp V      &kp B        X_MB     &kp M      &kp N      &comma_morph  &dot_morph &kp FSLH  X_RB
+            X_LB     &kp Z      &kp X      &kp C      &kp V      &kp B        X_MB     &kp N      &kp M      &comma_morph  &dot_morph &kp FSLH  X_RB
         //├──────┤ ╰──────────┴──────────┴──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┴──────────┴──────────╯ ├──────┤
-            X_LH                                      NAV_ESC    NUM_SPC      X_MH     SYM_ENT    &key_repeat                                   X_RH
+            X_LH                                      NAV_ESC    NUM_SPC      X_MH     &kp ENTER  SYM_DEL                                       X_RH
         //╰──────╯                                  ╰──────────┴──────────╯ ╰──────╯ ╰──────────┴──────────╯                                  ╰──────╯
             >;
         };
@@ -170,13 +171,13 @@
             display-name = "NUM";
             bindings = <
         //╭──────╮ ╭──────────┬──────────┬──────────┬──────────┬──────────╮ ╭──────╮ ╭──────────┬──────────┬──────────┬──────────┬──────────╮ ╭──────╮
-            X_LT     ___        ___        &mo FUN    ___        ___          X_MT     &kp PLUS   &kp N7     &kp N8     &kp N9     &kp EQUAL    X_RT
+            X_LT     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5       X_MT     &kp N6     &kp N7     &kp N8     &kp N9     &kp N0       X_RT
         //├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤
-            X_LM     ___        ___        ___        ___        ___          X_MM     &dot_morph &kp N4     &kp N5     &kp N6     &kp SEMI     X_RM
+            X_LM     &kp MINUS  &kp FSLH   &kp ASTRK  &kp PLUS   &kp EQUAL    X_MM     &kp DOT    &kp COMMA  &kp UNDER  &kp PRCNT  &kp CARET    X_RM
         //├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤
-            X_LB     ___        ___        ___        ___        ___          X_MB     &kp MINUS  &kp N1     &kp N2     &kp N3     ___          X_RB
+            X_LB     ___        ___        ___        ___        ___          X_MB     ___        ___        ___        ___        ___          X_RB
         //├──────┤ ╰──────────┴──────────┴──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┴──────────┴──────────╯ ├──────┤
-            X_LH                                      ___        ___          X_MH     ___        &kp N0                                        X_RH
+            X_LH                                      ___        ___          X_MH     ___        ___                                           X_RH
         //╰──────╯                                  ╰──────────┴──────────╯ ╰──────╯ ╰──────────┴──────────╯                                  ╰──────╯
             >;
         };
@@ -185,13 +186,13 @@
             display-name = "SYM";
             bindings = <
         //╭──────╮ ╭──────────┬──────────┬──────────┬──────────┬──────────╮ ╭──────╮ ╭──────────┬──────────┬──────────┬──────────┬──────────╮ ╭──────╮
-            X_LT     &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    X_MT     &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR     X_RT
+            X_LT     &kp LBKT   &kp LPAR   &kp LBRC   &kp LT     &kp GRAVE    X_MT     &kp GRAVE  &kp GT     &kp RBRC   &kp RPAR   &kp RBKT     X_RT
         //├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤
-            X_LM     HRML(GRAVE,  LPAR,     LBRC,       LBKT,       LT)       X_MM     HRMR(GT,     RBKT,     RBRC,       RPAR,     TILDE)      X_RM
+            X_LM     &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PIPE     X_MM     &kp PIPE   &kp AMPS   &kp ASTRK  &kp QMARK  &kp BSLH     X_RM
         //├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤
-            X_LB    &caps_word  &tog QWE   XXX        XXX        &kp UNDER    X_MB     &kp UNDER  &kp MINUS  XXX        XXX        XXX          X_RB
+            X_LB     &sk LSHFT  ___        ___        ___        ___          X_MB     ___        ___        ___        ___        &sk RSHFT    X_RB
         //├──────┤ ╰──────────┴──────────┴──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┴──────────┴──────────╯ ├──────┤
-            X_LH                                      ___        &kp ESC      X_MH     ___        ___                                           X_RH
+            X_LH                                      &kp ESC    ___          X_MH     ___        ___                                           X_RH
         //╰──────╯                                  ╰──────────┴──────────╯ ╰──────╯ ╰──────────┴──────────╯                                  ╰──────╯
             >;
         };
