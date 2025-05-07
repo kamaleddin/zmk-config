@@ -114,7 +114,7 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <QUICK_TAP>;
             require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
-            bindings = <&kp F10 &kp ENTER>;
+            bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
@@ -134,7 +134,7 @@
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                           &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
                                                                 &kp HOME                                               &kp PAGE_UP
-                                            &kp BACKSPACE  &kp DELETE   &kp END                                                &kp TAB  &enter_f10 ENTER F10 &kp SPACE
+                                            &kp BACKSPACE  &kp DELETE   &kp END                                                &kp TAB  &enter_f10 F10 ENTER &kp SPACE
             >;
         };
 
