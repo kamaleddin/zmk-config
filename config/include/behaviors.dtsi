@@ -33,9 +33,9 @@ MAKE_HRM(hml, KEYS_R THUMBS)
 MAKE_HRM(hmr, KEYS_L THUMBS)
 
 &lt {
-    tapping-term-ms = <TAPPING_TERM_MS>;
-    flavor = "balanced";
-    quick-tap-ms = <QUICK_TAP_MS>;
+    tapping-term-ms = <150>;
+    flavor = "hold-preferred";
+    quick-tap-ms = <0>;
 };
 
 &sk {

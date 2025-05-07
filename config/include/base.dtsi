@@ -81,8 +81,8 @@
 
 //      layer       aliases
 #define NAV_ESC     &escape_morph
-#define SYM_SPC     &lt_space SYM SPACE     // Activate symbol layer by holding space (using custom behavior)
-#define NUM_DEL     &lt_del NUM DEL        // Activate number layer by holding delete (using custom behavior)
+#define SYM_SPC     &mo SYM     // Activate symbol layer directly by holding space
+#define NUM_DEL     &mo NUM     // Activate number layer directly by holding delete
 #define SYM_ENT     &lt SYM ENTER     // Original definition kept for compatibility
 
 //      some        functions
@@ -132,7 +132,7 @@
         //├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤
             X_LB     &kp Z      &kp X      &kp C      &kp D      &kp V        X_MB     &kp K      &kp H      &comma_morph  &dot_morph &kp FSLH  X_RB
         //├──────┤ ╰──────────┴──────────┴──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┴──────────┴──────────╯ ├──────┤
-            X_LH                                      NAV_ESC    SYM_SPC      X_MH     &kp ENTER  NUM_DEL                                       X_RH
+            X_LH                                      NAV_ESC    &lt SYM SPACE X_MH     &kp ENTER  &lt NUM DEL                                   X_RH
         //╰──────╯                                  ╰──────────┴──────────╯ ╰──────╯ ╰──────────┴──────────╯                                  ╰──────╯
             >;
         };
@@ -147,7 +147,7 @@
         //├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────┤
             X_LB     &kp Z      &kp X      &kp C      &kp V      &kp B        X_MB     &kp N      &kp M      &comma_morph  &dot_morph &kp FSLH  X_RB
         //├──────┤ ╰──────────┴──────────┴──────────┼──────────┼──────────┤ ├──────┤ ├──────────┼──────────┼──────────┴──────────┴──────────╯ ├──────┤
-            X_LH                                      NAV_ESC    SYM_SPC      X_MH     &kp ENTER  NUM_DEL                                       X_RH
+            X_LH                                      NAV_ESC    &lt SYM SPACE X_MH     &kp ENTER  &lt NUM DEL                                   X_RH
         //╰──────╯                                  ╰──────────┴──────────╯ ╰──────╯ ╰──────────┴──────────╯                                  ╰──────╯
             >;
         };
