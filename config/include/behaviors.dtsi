@@ -33,9 +33,11 @@ MAKE_HRM(hml, KEYS_R THUMBS)
 MAKE_HRM(hmr, KEYS_L THUMBS)
 
 &lt {
-    tapping-term-ms = <150>;
+    tapping-term-ms = <200>;
     flavor = "hold-preferred";
     quick-tap-ms = <0>;
+    retro-tap;
+    hold-trigger-key-positions = <0>;
 };
 
 &sk {
