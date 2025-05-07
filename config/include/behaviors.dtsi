@@ -61,21 +61,19 @@ MAKE_HRM(hmr, KEYS_L THUMBS)
         lt_space: layer_tap_space {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <175>;  // Shorter tapping term for space
-            quick-tap-ms = <QUICK_TAP_MS>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;  // Very short tapping term for space
+            quick-tap-ms = <0>;      // Disable quick tap
             bindings = <&mo>, <&kp>;
-            hold-trigger-on-release;  // Helps with layer activation reliability
         };
         
         lt_del: layer_tap_delete {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <175>;  // Shorter tapping term for delete
-            quick-tap-ms = <QUICK_TAP_MS>;
+            flavor = "balanced";
+            tapping-term-ms = <150>;  // Very short tapping term for delete
+            quick-tap-ms = <0>;      // Disable quick tap
             bindings = <&mo>, <&kp>;
-            hold-trigger-on-release;  // Helps with layer activation reliability
         };
     };
 };
