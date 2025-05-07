@@ -105,6 +105,19 @@
             require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
             bindings = <&mo>, <&kp>;
         };
+
+        // Enter/F10 hold-tap behavior
+        enter_f10: enter_f10_behavior {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP>;
+            require-prior-idle-ms = <REQUIRE_PRIOR_IDLE>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
     };
 
     keymap {
@@ -121,7 +134,7 @@
               &kp GRAVE   &kp BACKSLASH   &kp LEFT  &kp RIGHT                                                                                       &kp UP    &kp DOWN  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                           &kp LEFT_CONTROL  &kp LEFT_GUI                                               &kp RIGHT_ALT  &kp RIGHT_CONTROL
                                                                 &kp HOME                                               &kp PAGE_UP
-                                            &kp BACKSPACE  &kp DELETE   &kp END                                                &kp PAGE_DOWN  &kp ENTER &kp SPACE
+                                            &kp BACKSPACE  &kp DELETE   &kp END                                                &kp TAB  &enter_f10 ENTER F10 &kp SPACE
             >;
         };
 
