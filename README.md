@@ -11,6 +11,8 @@ This repository tracks my keyboard configuration.
 - 34x [Ambients Silent Choc Switches 35g Twilight](https://lowprokb.ca/products/ambients-silent-choc-switches?variant=44873426436260)
 - 34x MBK Choc Keycaps
 
+![Lynx Keyboard Layout](assets/lynx.svg)
+
 ## Helios aka Kinesis Advantage2
 
 88-key keyboard with a split design and a thumb cluster.
@@ -20,6 +22,33 @@ This repository tracks my keyboard configuration.
 
 ## Keymap
 
-This awesome keymap is created via [keymap-drawer](https://github.com/caksoylar/keymap-drawer).
+### Keyboard Layout Visualization
 
-![Keymap](./assets/helios.svg)
+![Helios Keyboard Layout](assets/helios.svg)
+
+### Key:
+- ♯: Shift
+- ⌥: Alt/Option
+- ⌘: GUI/Command/Windows
+- ⌃: Control
+- /5: Hold for Number Layer
+- /4: Hold for Symbol Layer
+- /3: Hold for Navigation Layer
+
+This keymap is implemented using ZMK firmware for the Kinesis Advantage 2 keyboard.
+
+## Generating Keyboard Visualizations
+
+The keyboard layout visualizations are generated using [keymap-drawer](https://github.com/caksoylar/keymap-drawer). To regenerate these visualizations after making changes to your keymap:
+
+1. Make sure you have keymap-drawer installed:
+   ```
+   pip install keymap-drawer
+   ```
+
+2. Run the visualization script:
+   ```
+   ./scripts/keymap_build.sh
+   ```
+
+This will parse your keymap files and generate SVG visualizations in the `assets` directory. The configuration for keymap-drawer is stored in `keymap_drawer.config.yaml`.

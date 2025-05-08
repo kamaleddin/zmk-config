@@ -22,10 +22,10 @@ layers:
     - {t: ',', s: ;}
     - {t: ., s: ':'}
     - /
-  - - {t: '$$mdi:keyboard-esc$$', h: NAV, s: '~'}
-    - {t: '$$mdi:keyboard-space$$', h: NUM, s: '`'}
-    - {t: '$$mdi:keyboard-return$$', h: SYM}
-    - '&key_repeat'
+  - - {t: DEL, h: NUM}
+    - {t: '$$mdi:keyboard-esc$$', h: NAV, s: '~'}
+    - {t: '$$mdi:keyboard-space$$', h: SYM}
+    - $$mdi:keyboard-return$$
   QWE:
   - [Q, W, E, R, T, Y, U, I, O, P]
   - - {t: A, h: '$$mdi:apple-keyboard-command$$'}
@@ -43,15 +43,15 @@ layers:
     - C
     - V
     - B
-    - M
     - N
+    - M
     - {t: ',', s: ;}
     - {t: ., s: ':'}
     - /
-  - - {t: '$$mdi:keyboard-esc$$', h: NAV, s: '~'}
-    - {t: '$$mdi:keyboard-space$$', h: NUM, s: '`'}
-    - {t: '$$mdi:keyboard-return$$', h: SYM}
-    - '&key_repeat'
+  - - {t: DEL, h: NUM}
+    - {t: '$$mdi:keyboard-esc$$', h: NAV, s: '~'}
+    - {t: '$$mdi:keyboard-space$$', h: SYM}
+    - $$mdi:keyboard-return$$
   NAV:
   - - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
@@ -83,75 +83,48 @@ layers:
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
-  - - {type: held}
-    - {t: '$$mdi:transfer$$', type: trans}
+  - - {t: '$$mdi:transfer$$', type: trans}
+    - {type: held}
     - $$mdi:keyboard-tab$$
     - $$mdi:cancel$$
   NUM:
-  - - {t: '$$mdi:transfer$$', type: trans}
-    - {t: '$$mdi:transfer$$', type: trans}
-    - FUN
-    - {t: '$$mdi:transfer$$', type: trans}
-    - {t: '$$mdi:transfer$$', type: trans}
-    - +
-    - '7'
-    - '8'
-    - '9'
-    - '='
+  - ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+  - ['-', /, '*', +, '=', ., ',', _, '%', ^]
   - - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
-    - {t: ., s: ':'}
-    - '4'
-    - '5'
-    - '6'
-    - ;
-  - - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
-    - '-'
-    - '1'
-    - '2'
-    - '3'
     - {t: '$$mdi:transfer$$', type: trans}
-  - - {t: '$$mdi:transfer$$', type: trans}
-    - {type: held}
+  - - {type: held}
     - {t: '$$mdi:transfer$$', type: trans}
-    - '0'
+    - {t: '$$mdi:transfer$$', type: trans}
+    - {t: '$$mdi:transfer$$', type: trans}
   SYM:
-  - ['!', '@', '#', $, '%', ^, '&', '*', (, )]
-  - - {t: '`', h: '$$mdi:apple-keyboard-command$$'}
-    - {t: (, h: '$$mdi:apple-keyboard-option$$'}
-    - {t: '{', h: '$$mdi:apple-keyboard-control$$'}
-    - {t: '[', h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: <, h: 'Meh+$$mdi:apple-keyboard-command$$'}
-    - {t: '>', h: 'Sft+Ctl+AltGr+$$mdi:apple-keyboard-command$$'}
-    - {t: ']', h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: '}', h: '$$mdi:apple-keyboard-control$$'}
-    - {t: ), h: '$$mdi:apple-keyboard-option$$'}
-    - {t: '~', h: '$$mdi:apple-keyboard-command$$'}
-  - - $$mdi:alpha-w-box$$
-    - {t: QWE, h: toggle}
-    - ''
-    - ''
-    - _
-    - _
-    - '-'
-    - ''
-    - ''
-    - ''
-  - - {t: '$$mdi:transfer$$', type: trans}
-    - $$mdi:keyboard-esc$$
+  - ['[', (, '{', <, '`', '`', '>', '}', ), ']']
+  - ['!', '@', '#', $, '|', '|', '&', '*', '?', \]
+  - - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+    - {t: '$$mdi:transfer$$', type: trans}
+    - {t: '$$mdi:transfer$$', type: trans}
+    - {t: '$$mdi:transfer$$', type: trans}
+    - {t: '$$mdi:transfer$$', type: trans}
+    - {t: '$$mdi:transfer$$', type: trans}
+    - {t: '$$mdi:transfer$$', type: trans}
+    - {t: '$$mdi:transfer$$', type: trans}
+    - {t: '$$mdi:transfer$$', type: trans}
+    - {t: '$$mdi:apple-keyboard-shift$$', h: sticky}
+  - - $$mdi:keyboard-esc$$
+    - {t: '$$mdi:transfer$$', type: trans}
     - {type: held}
     - {t: '$$mdi:transfer$$', type: trans}
   FUN:
   - - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
-    - {type: held}
+    - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
@@ -180,7 +153,7 @@ layers:
     - F3
     - F11
   - - {t: '$$mdi:transfer$$', type: trans}
-    - {type: held}
+    - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - F10
   SYS:
@@ -214,8 +187,8 @@ layers:
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
     - {t: '$$mdi:transfer$$', type: trans}
-  - - {t: '$$mdi:transfer$$', type: trans}
-    - {type: held}
+  - - {type: held}
+    - {t: '$$mdi:transfer$$', type: trans}
     - {type: held}
     - {t: '$$mdi:transfer$$', type: trans}
 combos:

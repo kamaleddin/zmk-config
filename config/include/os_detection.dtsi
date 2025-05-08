@@ -1,0 +1,143 @@
+/*
+ * OS Detection for ZMK
+ * This file sets up OS detection and conditional behavior for Windows and macOS
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+// OS detection behavior
+/ {
+    behaviors {
+        // Conditional mod mappings
+        win_gui: windows_gui_mod {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI>;
+            label = "WINDOWS_GUI_MOD";
+        };
+
+        mac_gui: macos_cmd_mod {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LGUI>;
+            label = "MACOS_CMD_MOD";
+        };
+
+        win_alt: windows_alt_mod {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>;
+            label = "WINDOWS_ALT_MOD";
+        };
+
+        mac_opt: macos_opt_mod {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LALT>;
+            label = "MACOS_OPT_MOD";
+        };
+
+        // Conditional key mappings for command/control swapping
+        mac_ctrl_c: macos_ctrl_c {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(C)>;
+            label = "MACOS_CTRL_C";
+        };
+
+        win_ctrl_c: windows_ctrl_c {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>;
+            label = "WINDOWS_CTRL_C";
+        };
+
+        mac_ctrl_v: macos_ctrl_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(V)>;
+            label = "MACOS_CTRL_V";
+        };
+
+        win_ctrl_v: windows_ctrl_v {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(V)>;
+            label = "WINDOWS_CTRL_V";
+        };
+
+        os_copy: os_copy {
+            compatible = "zmk,behavior-macro-versioned";
+            #binding-cells = <0>;
+            label = "OS_COPY";
+            bindings
+                = <&macro_press &mo 5>
+                , <&macro_tap &kp C>
+                , <&macro_release &mo 5>
+                ;
+        };
+
+        os_paste: os_paste {
+            compatible = "zmk,behavior-macro-versioned";
+            #binding-cells = <0>;
+            label = "OS_PASTE";
+            bindings
+                = <&macro_press &mo 5>
+                , <&macro_tap &kp V>
+                , <&macro_release &mo 5>
+                ;
+        };
+
+        // OS detection toggle macro
+        os_toggle: os_toggle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 5>;
+            label = "OS_TOGGLE";
+        };
+    };
+
+    // OS detection conditional layer
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        os_detection_layer {
+            if-layers = <5>;
+            then-layer = <6>;
+        };
+    };
+
+    macros {
+        // Screenshot shortcuts for Windows and macOS
+        mac_screenshot: mac_screenshot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(NUMBER_4))>;
+            label = "MAC_SCREENSHOT";
+        };
+
+        win_screenshot: win_screenshot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LS(S))>;
+            label = "WIN_SCREENSHOT";
+        };
+    };
+};
+
+// Setup the OS toggle shortcut on a key
+// This creates a "peek" behavior that will check if we're on Windows or macOS
+// Note: quick-tap-ms is not supported for &kp behavior
+
+// Define these key combos based on ZMK's existing macros
+#define MAC_COPY &kp LG(C)
+#define MAC_PASTE &kp LG(V)
+#define MAC_CUT &kp LG(X)
+#define WIN_COPY &kp LC(C)
+#define WIN_PASTE &kp LC(V)
+#define WIN_CUT &kp LC(X)
+
+// Convenience macros for OS-specific shortcuts
+#define OS_COPY &os_copy
+#define OS_PASTE &os_paste 
